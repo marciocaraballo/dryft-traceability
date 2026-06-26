@@ -48,6 +48,6 @@ describe("DocumentReader", () => {
         onClose={jest.fn()}
       />
     );
-    expect(screen.getByRole("button", { name: /1.*this is page one/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /go to page 1/i })).toBeInTheDocument();
   });
 });
