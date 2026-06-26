@@ -9,7 +9,7 @@ interface SourceCardProps {
   page: number;
   text: string;
   match: string;
-  markRef?: RefObject<HTMLElement>;
+  markRef?: RefObject<HTMLElement | null>;
   onViewInDoc: (page: number, match: string) => void;
 }
 
