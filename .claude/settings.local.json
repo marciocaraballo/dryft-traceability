@@ -22,7 +22,8 @@
       "Bash(npx --prefix /Users/marcio/Desktop/Projects/dryft eslint /private/tmp/claude-501/-Users-marcio-Desktop-Projects-dryft/91441609-8744-44ae-bea0-93af168a5c0d/scratchpad/a11y_test.tsx)",
       "Bash(npm outdated *)",
       "Bash(DEBUG_PRINT_LIMIT=50 npm test *)",
-      "Bash(npm uninstall *)"
+      "Bash(npm uninstall *)",
+      "Bash(DEBUG_PRINT_LIMIT=50 npx jest *)"
     ]
   }
 }
