@@ -24,11 +24,11 @@ export const SourceCard = ({ page, text, match, markRef, onViewInDoc }: SourceCa
   return (
     <div className="flex flex-col gap-3">
       <div className="rounded border border-[var(--border)] overflow-hidden">
-        <div className="flex items-center justify-between px-5 py-2.5 border-b border-[var(--border-light)] bg-[#f5f5f2]">
-          <span className="font-sans text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase truncate">
+        <div className="flex items-center gap-3 px-5 py-2.5 border-b border-[var(--border-light)] bg-[#f5f5f2]">
+          <span className="font-sans text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase flex-1 min-w-0 truncate">
             {coiDoc.title}
           </span>
-          <span className="font-sans text-2xs text-[var(--text-tertiary)]">Page {page}</span>
+          <span className="font-sans text-2xs text-[var(--text-tertiary)] shrink-0 whitespace-nowrap">Page {page}</span>
         </div>
         <div className="px-6 py-5 bg-[#fafaf8]">
           <p className="font-serif text-sm leading-[1.85] text-[var(--text-primary)]">
