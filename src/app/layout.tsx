@@ -16,7 +16,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
     lang="en"
     className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} h-full antialiased`}
   >
-    <body className="h-full flex flex-col font-sans text-[var(--text-primary)]">
+    <body className="h-full flex flex-col font-sans text-primary">
       {children}
     </body>
   </html>

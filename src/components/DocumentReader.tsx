@@ -52,14 +52,14 @@ export const DocumentReader = ({ page: tracedPage, match, onClose }: DocumentRea
   }, [activePage]);
 
   return (
-    <div role="dialog" aria-modal="true" aria-label="Certificate of Incorporation viewer" className="fixed inset-0 z-50 flex bg-[var(--background)] doc-reader-enter">
-      <aside className="w-48 shrink-0 border-r border-[var(--border)] bg-[var(--sidebar-bg)] flex flex-col overflow-hidden">
-        <div className="px-4 py-3.5 border-b border-[var(--border)] shrink-0">
-          <p className="text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase leading-snug">
+    <div role="dialog" aria-modal="true" aria-label="Certificate of Incorporation viewer" className="fixed inset-0 z-50 flex bg-background doc-reader-enter">
+      <aside className="w-48 shrink-0 border-r border-border bg-sidebar-bg flex flex-col overflow-hidden">
+        <div className="px-4 py-3.5 border-b border-border shrink-0">
+          <p className="text-2xs font-semibold tracking-widest text-tertiary uppercase leading-snug">
             {coiDoc.title}
           </p>
-          <p className="text-xs text-[var(--text-secondary)] mt-0.5">{coiDoc.company}</p>
-          <p className="text-2xs text-[var(--text-tertiary)] mt-0.5">{coiDoc.date}</p>
+          <p className="text-xs text-secondary mt-0.5">{coiDoc.company}</p>
+          <p className="text-2xs text-tertiary mt-0.5">{coiDoc.date}</p>
         </div>
 
         <div className="flex-1 overflow-y-auto py-1">
@@ -77,18 +77,18 @@ export const DocumentReader = ({ page: tracedPage, match, onClose }: DocumentRea
                 }}
                 className={`w-full text-left px-3 py-1.5 flex items-center gap-2.5 transition-colors ${
                   isActive
-                    ? "bg-[var(--accent-light)] text-[var(--accent)]"
-                    : "hover:bg-[var(--border-light)] text-[var(--text-secondary)]"
+                    ? "bg-accent-light text-accent"
+                    : "hover:bg-border-light text-secondary"
                 }`}
               >
-                <span className="text-2xs tabular-nums shrink-0 w-6 text-right text-[var(--text-tertiary)]">
+                <span className="text-2xs tabular-nums shrink-0 w-6 text-right text-tertiary">
                   {p.page}
                 </span>
                 <span className="text-xs leading-snug truncate flex-1">
                   {p.text.slice(0, 28).trim()}…
                 </span>
                 {isTraced && (
-                  <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
+                  <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-accent" />
                 )}
               </button>
             );
@@ -97,16 +97,16 @@ export const DocumentReader = ({ page: tracedPage, match, onClose }: DocumentRea
       </aside>
 
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        <div className="flex items-center justify-between px-8 py-3 border-b border-[var(--border)] bg-[var(--surface)] shrink-0">
+        <div className="flex items-center justify-between px-8 py-3 border-b border-border bg-surface shrink-0">
           <div>
-            <p className="text-sm font-semibold text-[var(--text-primary)]">{coiDoc.title}</p>
-            <p className="text-xs text-[var(--text-secondary)] mt-0.5">
+            <p className="text-sm font-semibold text-primary">{coiDoc.title}</p>
+            <p className="text-xs text-secondary mt-0.5">
               {coiDoc.company} · {coiDoc.date} · {coiDoc.totalPages} pages
             </p>
           </div>
           <button
             onClick={onClose}
-            className="flex items-center gap-1.5 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors px-3 py-1.5 rounded border border-[var(--border)] hover:border-[var(--text-secondary)]"
+            className="flex items-center gap-1.5 text-xs text-secondary hover:text-primary transition-colors px-3 py-1.5 rounded border border-border hover:border-secondary"
           >
             Close ×
           </button>
@@ -130,19 +130,19 @@ export const DocumentReader = ({ page: tracedPage, match, onClose }: DocumentRea
                 >
                   <div className={`bg-white rounded-sm border px-4 py-5 md:px-9 md:py-7 shadow-sm transition-all duration-300 ${
                     isTraced
-                      ? "border-[var(--accent)] shadow-[0_0_0_3px_var(--accent-light)]"
-                      : "border-[var(--border)]"
+                      ? "border-accent shadow-[0_0_0_3px_var(--accent-light)]"
+                      : "border-border"
                   }`}>
-                    <div className="flex items-center justify-between mb-5 pb-3 border-b border-[var(--border-light)]">
-                      <span className="font-sans text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
+                    <div className="flex items-center justify-between mb-5 pb-3 border-b border-border-light">
+                      <span className="font-sans text-2xs font-semibold tracking-widest text-tertiary uppercase">
                         {coiDoc.company}
                       </span>
-                      <span className="font-sans text-2xs text-[var(--text-tertiary)]">
+                      <span className="font-sans text-2xs text-tertiary">
                         Page {p.page}
                       </span>
                     </div>
 
-                    <p className="font-serif text-sm leading-[1.9] text-[var(--text-primary)]">
+                    <p className="font-serif text-sm leading-[1.9] text-primary">
                       {isTraced && idx >= 0 ? (
                         <>
                           {before}

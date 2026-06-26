@@ -36,7 +36,7 @@ export const CapTable = ({ rows, selectedId, activeTraceId, onRowClick, onTrace 
           {COL_HEADERS.map((col) => (
             <th
               key={col.label}
-              className={cn(col.cls, "px-4 py-2.5 font-medium text-2xs tracking-wider text-[var(--text-tertiary)] border-b border-[var(--border)] whitespace-nowrap")}
+              className={cn(col.cls, "px-4 py-2.5 font-medium text-2xs tracking-wider text-tertiary border-b border-border whitespace-nowrap")}
             >
               {col.label}
             </th>
@@ -48,7 +48,7 @@ export const CapTable = ({ rows, selectedId, activeTraceId, onRowClick, onTrace 
           if (row.isSection) {
             return (
               <tr key={row.id}>
-                <td colSpan={6} className="px-4 pt-4 pb-1.5 text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
+                <td colSpan={6} className="px-4 pt-4 pb-1.5 text-2xs font-semibold tracking-widest text-tertiary uppercase">
                   {row.sectionLabel}
                 </td>
               </tr>
@@ -57,13 +57,13 @@ export const CapTable = ({ rows, selectedId, activeTraceId, onRowClick, onTrace 
 
           if (row.isTotal) {
             return (
-              <tr key={row.id} className="border-t border-[var(--border)]">
-                <td className="px-4 py-2.5 font-semibold text-[var(--text-primary)]">{row.name}</td>
-                <td className="px-4 py-2.5 text-right text-[var(--text-secondary)]">—</td>
-                <td className="px-4 py-2.5 text-right text-[var(--text-secondary)]">—</td>
-                <td className="px-4 py-2.5 text-right font-medium text-[var(--text-primary)]">{formatShares(row.asIfConverted)}</td>
-                <td className="px-4 py-2.5 text-right font-medium text-[var(--text-primary)]">{formatPercent(row.fullyDilutedPct)}</td>
-                <td className="px-4 py-2.5 text-right text-[var(--text-secondary)]">—</td>
+              <tr key={row.id} className="border-t border-border">
+                <td className="px-4 py-2.5 font-semibold text-primary">{row.name}</td>
+                <td className="px-4 py-2.5 text-right text-secondary">—</td>
+                <td className="px-4 py-2.5 text-right text-secondary">—</td>
+                <td className="px-4 py-2.5 text-right font-medium text-primary">{formatShares(row.asIfConverted)}</td>
+                <td className="px-4 py-2.5 text-right font-medium text-primary">{formatPercent(row.fullyDilutedPct)}</td>
+                <td className="px-4 py-2.5 text-right text-secondary">—</td>
               </tr>
             );
           }
@@ -75,14 +75,14 @@ export const CapTable = ({ rows, selectedId, activeTraceId, onRowClick, onTrace 
           return (
             <tr
               key={row.id}
-              className={cn("transition-colors", isSelected && "bg-[var(--accent-light)]")}
+              className={cn("transition-colors", isSelected && "bg-accent-light")}
             >
-              <td className="px-4 py-2.5 border-b border-[var(--border-light)]">
+              <td className="px-4 py-2.5 border-b border-border-light">
                 <button
                   onClick={() => onRowClick(row.id)}
                   className={cn(
                     "flex items-center gap-1.5 group/row cursor-pointer",
-                    isSelected ? "text-[var(--accent)] font-medium" : "text-[var(--text-primary)]"
+                    isSelected ? "text-accent font-medium" : "text-primary"
                   )}
                 >
                   <ChevronRight
@@ -91,15 +91,15 @@ export const CapTable = ({ rows, selectedId, activeTraceId, onRowClick, onTrace 
                     className={cn(
                       "shrink-0 transition-all duration-150",
                       isSelected
-                        ? "rotate-90 text-[var(--accent)]"
-                        : "text-[var(--text-tertiary)] group-hover/row:text-[var(--text-secondary)]"
+                        ? "rotate-90 text-accent"
+                        : "text-tertiary group-hover/row:text-secondary"
                     )}
                   />
                   {row.name}
                 </button>
               </td>
 
-              <td className="px-4 py-2.5 text-right border-b border-[var(--border-light)] text-[var(--text-secondary)] tabular-nums">
+              <td className="px-4 py-2.5 text-right border-b border-border-light text-secondary tabular-nums">
                 {row.sharesOutstanding == null ? "—" : (
                   sharesTraceId ? (
                     <TraceableValue
@@ -113,17 +113,17 @@ export const CapTable = ({ rows, selectedId, activeTraceId, onRowClick, onTrace 
                 )}
               </td>
 
-              <td className="px-4 py-2.5 text-right border-b border-[var(--border-light)] text-[var(--text-secondary)] tabular-nums">
+              <td className="px-4 py-2.5 text-right border-b border-border-light text-secondary tabular-nums">
                 {row.conversionRatio.toFixed(4)}
               </td>
-              <td className="px-4 py-2.5 text-right border-b border-[var(--border-light)] text-[var(--text-secondary)] tabular-nums">
+              <td className="px-4 py-2.5 text-right border-b border-border-light text-secondary tabular-nums">
                 {formatShares(row.asIfConverted)}
               </td>
-              <td className="px-4 py-2.5 text-right border-b border-[var(--border-light)] text-[var(--text-secondary)] tabular-nums">
+              <td className="px-4 py-2.5 text-right border-b border-border-light text-secondary tabular-nums">
                 {formatPercent(row.fullyDilutedPct)}
               </td>
 
-              <td className="px-4 py-2.5 text-right border-b border-[var(--border-light)] text-[var(--text-secondary)] tabular-nums">
+              <td className="px-4 py-2.5 text-right border-b border-border-light text-secondary tabular-nums">
                 {priceTraceId ? (
                   <TraceableValue
                     traceId={priceTraceId}

@@ -28,7 +28,7 @@ export const TraceableValue = ({ children, traceId, onTrace, isActive }: Traceab
       onClick={() => onTrace(traceId)}
       className={cn(
         "traceable inline-flex items-center gap-1 font-medium group/tv",
-        isActive && "text-[var(--accent)]"
+        isActive && "text-accent"
       )}
     >
       {children}
@@ -38,8 +38,8 @@ export const TraceableValue = ({ children, traceId, onTrace, isActive }: Traceab
         className={cn(
           "shrink-0 transition-colors",
           isActive
-            ? "text-[var(--accent)]"
-            : "text-[var(--text-tertiary)] group-hover/tv:text-[var(--accent)]"
+            ? "text-accent"
+            : "text-tertiary group-hover/tv:text-accent"
         )}
       />
     </button>

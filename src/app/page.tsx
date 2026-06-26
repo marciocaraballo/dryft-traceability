@@ -47,41 +47,41 @@ const Home = () => {
   }, [docReader, panelTraceKey, selectedRowId]);
 
   return (
-    <div className="h-full flex flex-col bg-[var(--background)]">
-      <header className="flex items-center justify-between h-11 px-4 border-b border-[var(--border)] bg-[var(--surface)] shrink-0">
+    <div className="h-full flex flex-col bg-background">
+      <header className="flex items-center justify-between h-11 px-4 border-b border-border bg-surface shrink-0">
         <div className="flex items-center gap-3">
           <button
             aria-label="Open navigation"
             onClick={() => setSidebarOpen(true)}
-            className="md:hidden flex items-center justify-center w-7 h-7 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+            className="md:hidden flex items-center justify-center w-7 h-7 text-secondary hover:text-primary transition-colors"
           >
             <Menu size={16} />
           </button>
-          <span className="font-semibold text-sm tracking-tight text-[var(--text-primary)]">Dryft</span>
-          <span className="hidden md:inline text-[var(--border)] select-none">·</span>
-          <span className="hidden md:inline text-xs text-[var(--text-secondary)]">Prototype: conclusion-workspace</span>
-          <span className="hidden md:inline text-[var(--border)] select-none">·</span>
-          <span className="hidden md:inline text-xs text-[var(--text-secondary)]">Helios Bioscience Inc.</span>
+          <span className="font-semibold text-sm tracking-tight text-primary">Dryft</span>
+          <span className="hidden md:inline text-border select-none">·</span>
+          <span className="hidden md:inline text-xs text-secondary">Prototype: conclusion-workspace</span>
+          <span className="hidden md:inline text-border select-none">·</span>
+          <span className="hidden md:inline text-xs text-secondary">Helios Bioscience Inc.</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-2xs font-medium tracking-wide uppercase bg-emerald-50 text-emerald-700 border border-emerald-200">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
             Concluded
           </span>
-          <div className="w-6 h-6 rounded-full bg-[var(--sidebar-bg)] border border-[var(--border)] flex items-center justify-center text-2xs font-semibold text-[var(--text-secondary)]">
+          <div className="w-6 h-6 rounded-full bg-sidebar-bg border border-border flex items-center justify-center text-2xs font-semibold text-secondary">
             KW
           </div>
         </div>
       </header>
 
       <div className="flex flex-1 min-h-0">
-        <aside className="hidden md:flex w-48 shrink-0 bg-[var(--sidebar-bg)] border-r border-[var(--border)] flex-col py-3 gap-0.5">
+        <aside className="hidden md:flex w-48 shrink-0 bg-sidebar-bg border-r border-border flex-col py-3 gap-0.5">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.label}
-              className="flex items-center gap-2.5 px-3 py-1.5 text-xs text-[var(--text-secondary)] hover:bg-[var(--border-light)] hover:text-[var(--text-primary)] rounded-sm mx-1.5 transition-colors text-left"
+              className="flex items-center gap-2.5 px-3 py-1.5 text-xs text-secondary hover:bg-border-light hover:text-primary rounded-sm mx-1.5 transition-colors text-left"
             >
-              <span className="text-[var(--text-tertiary)] text-base leading-none">{item.icon}</span>
+              <span className="text-tertiary text-base leading-none">{item.icon}</span>
               {item.label}
             </button>
           ))}
@@ -93,13 +93,13 @@ const Home = () => {
               className="fixed inset-0 z-40 bg-black/30 md:hidden"
               onClick={() => setSidebarOpen(false)}
             />
-            <aside className="fixed inset-y-0 left-0 z-50 w-56 bg-[var(--sidebar-bg)] border-r border-[var(--border)] flex flex-col py-3 gap-0.5 md:hidden">
-              <div className="flex items-center justify-between px-3 pb-2 mb-1 border-b border-[var(--border-light)]">
-                <span className="text-xs font-semibold text-[var(--text-tertiary)] uppercase tracking-widest">Menu</span>
+            <aside className="fixed inset-y-0 left-0 z-50 w-56 bg-sidebar-bg border-r border-border flex flex-col py-3 gap-0.5 md:hidden">
+              <div className="flex items-center justify-between px-3 pb-2 mb-1 border-b border-border-light">
+                <span className="text-xs font-semibold text-tertiary uppercase tracking-widest">Menu</span>
                 <button
                   aria-label="Close navigation"
                   onClick={() => setSidebarOpen(false)}
-                  className="flex items-center justify-center w-6 h-6 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                  className="flex items-center justify-center w-6 h-6 text-secondary hover:text-primary transition-colors"
                 >
                   <X size={14} />
                 </button>
@@ -108,9 +108,9 @@ const Home = () => {
                 <button
                   key={item.label}
                   onClick={() => setSidebarOpen(false)}
-                  className="flex items-center gap-2.5 px-3 py-1.5 text-xs text-[var(--text-secondary)] hover:bg-[var(--border-light)] hover:text-[var(--text-primary)] rounded-sm mx-1.5 transition-colors text-left"
+                  className="flex items-center gap-2.5 px-3 py-1.5 text-xs text-secondary hover:bg-border-light hover:text-primary rounded-sm mx-1.5 transition-colors text-left"
                 >
-                  <span className="text-[var(--text-tertiary)] text-base leading-none">{item.icon}</span>
+                  <span className="text-tertiary text-base leading-none">{item.icon}</span>
                   {item.label}
                 </button>
               ))}
@@ -119,15 +119,15 @@ const Home = () => {
         )}
 
         <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
-          <div className="px-8 pt-6 pb-0 bg-[var(--surface)] border-b border-[var(--border)] shrink-0">
-            <h1 className="font-serif text-2xl text-[var(--text-primary)] tracking-tight mb-1">
+          <div className="px-8 pt-6 pb-0 bg-surface border-b border-border shrink-0">
+            <h1 className="font-serif text-2xl text-primary tracking-tight mb-1">
               Helios Bioscience Inc.
             </h1>
-            <p className="text-xs text-[var(--text-secondary)] mb-4">
+            <p className="text-xs text-secondary mb-4">
               April 30, 2026
-              <span className="mx-1.5 text-[var(--border)]">·</span>
+              <span className="mx-1.5 text-border">·</span>
               409A Valuation
-              <span className="mx-1.5 text-[var(--border)]">·</span>
+              <span className="mx-1.5 text-border">·</span>
               Version 4
             </p>
             <nav className="flex gap-0 -mb-px">
@@ -136,8 +136,8 @@ const Home = () => {
                   key={tab}
                   className={`px-4 py-2 text-xs font-medium border-b-2 transition-colors whitespace-nowrap ${
                     tab === "Capitalization"
-                      ? "border-[var(--text-primary)] text-[var(--text-primary)]"
-                      : "border-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--border)]"
+                      ? "border-primary text-primary"
+                      : "border-transparent text-secondary hover:text-primary hover:border-border"
                   }`}
                 >
                   {tab}
@@ -147,7 +147,7 @@ const Home = () => {
           </div>
 
           <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
-            <div className="flex-1 overflow-auto bg-[var(--surface)] pt-2">
+            <div className="flex-1 overflow-auto bg-surface pt-2">
               <CapTable
                 rows={capTableRows}
                 selectedId={selectedRowId}

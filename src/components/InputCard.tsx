@@ -42,15 +42,15 @@ export const InputCard = ({ inputKey, isExpanded, onToggle, onViewInDoc }: Input
     <div className={cn(
       "rounded border transition-colors duration-150",
       isExpanded
-        ? "border-[var(--accent)] bg-[var(--accent-light)]"
-        : "border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)] hover:bg-[var(--accent-light)]"
+        ? "border-accent bg-accent-light"
+        : "border-border bg-surface hover:border-accent hover:bg-accent-light"
     )}>
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between px-3.5 py-3 text-left gap-3 group"
       >
         <div className="min-w-0 flex-1 flex flex-col gap-1">
-          <p className="text-xs font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
+          <p className="text-xs font-medium text-primary group-hover:text-accent transition-colors">
             {trace.label}
           </p>
           <span className="inline-flex self-start items-center gap-1 px-1.5 py-0.5 rounded border text-2xs font-semibold bg-emerald-50 text-emerald-700 border-emerald-200">
@@ -58,15 +58,15 @@ export const InputCard = ({ inputKey, isExpanded, onToggle, onViewInDoc }: Input
           </span>
         </div>
         <div className="flex items-center gap-2 shrink-0">
-          <span className="text-sm font-semibold tabular-nums text-[var(--text-primary)]">
+          <span className="text-sm font-semibold tabular-nums text-primary">
             {trace.value}
           </span>
           <ChevronDown
             size={14}
             strokeWidth={2}
             className={cn(
-              "text-[var(--text-tertiary)] transition-transform duration-200",
-              isExpanded && "rotate-180 text-[var(--accent)]"
+              "text-tertiary transition-transform duration-200",
+              isExpanded && "rotate-180 text-accent"
             )}
           />
         </div>

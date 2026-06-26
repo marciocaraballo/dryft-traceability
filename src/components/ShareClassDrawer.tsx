@@ -19,19 +19,19 @@ export const ShareClassDrawer = ({ row, drawer, activeTraceId, onTrace, onClose 
 
   return (
     <div className={cn(
-      "fixed inset-0 z-40 flex flex-col overflow-y-auto border-t-2 border-[var(--accent)] bg-[var(--surface)] drawer-enter",
+      "fixed inset-0 z-40 flex flex-col overflow-y-auto border-t-2 border-accent bg-surface drawer-enter",
       "md:static md:inset-auto md:z-auto md:overflow-visible"
     )}>
-      <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--border)] md:px-8">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-border md:px-8">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-semibold text-[var(--accent)]">{row.name}</span>
-          <span className="text-[var(--border)]">·</span>
-          <span className="text-xs text-[var(--text-secondary)]">Preferred Stock</span>
+          <span className="text-xs font-semibold text-accent">{row.name}</span>
+          <span className="text-border">·</span>
+          <span className="text-xs text-secondary">Preferred Stock</span>
         </div>
         <button
           onClick={onClose}
           aria-label="Close drawer"
-          className="text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors text-lg leading-none w-6 h-6 flex items-center justify-center"
+          className="text-tertiary hover:text-primary transition-colors text-lg leading-none w-6 h-6 flex items-center justify-center"
         >
           ×
         </button>
@@ -39,7 +39,7 @@ export const ShareClassDrawer = ({ row, drawer, activeTraceId, onTrace, onClose 
 
       <div className="px-4 py-4 flex flex-col gap-6 md:px-8 md:flex-row md:gap-12">
         <div className="flex-1 min-w-0">
-          <p className="text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase mb-2">Rights and Preferences</p>
+          <p className="text-2xs font-semibold tracking-widest text-tertiary uppercase mb-2">Rights and Preferences</p>
           <div className="max-w-xs">
             <Field label="LP Rank">{drawer.lpRank}</Field>
             <Field label="LP Multiple">{drawer.lpMultiple}</Field>
@@ -53,13 +53,13 @@ export const ShareClassDrawer = ({ row, drawer, activeTraceId, onTrace, onClose 
         </div>
 
         <div className="flex-1 min-w-0">
-          <p className="text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase mb-2">Calculations</p>
+          <p className="text-2xs font-semibold tracking-widest text-tertiary uppercase mb-2">Calculations</p>
           <table className="w-full">
             <thead>
               <tr>
                 <th className="text-left" />
-                <th className="pb-1.5 px-4 text-right text-2xs font-semibold tracking-wider text-[var(--text-tertiary)] uppercase">Per Share</th>
-                <th className="pb-1.5 pl-4 text-right text-2xs font-semibold tracking-wider text-[var(--text-tertiary)] uppercase">Total</th>
+                <th className="pb-1.5 px-4 text-right text-2xs font-semibold tracking-wider text-tertiary uppercase">Per Share</th>
+                <th className="pb-1.5 pl-4 text-right text-2xs font-semibold tracking-wider text-tertiary uppercase">Total</th>
               </tr>
             </thead>
             <tbody>
@@ -91,9 +91,9 @@ export const ShareClassDrawer = ({ row, drawer, activeTraceId, onTrace, onClose 
         </div>
       </div>
 
-      <div className="px-4 py-2.5 border-t border-[var(--border-light)] bg-[var(--background)] md:px-8">
-        <p className="text-xs text-[var(--text-tertiary)]">
-          <span className="font-medium text-[var(--text-secondary)]">Sources:</span>{" "}
+      <div className="px-4 py-2.5 border-t border-border-light bg-background md:px-8">
+        <p className="text-xs text-tertiary">
+          <span className="font-medium text-secondary">Sources:</span>{" "}
           Helios Bioscience Inc. — Amended and Restated Certificate of Incorporation (Jan 22, 2026), Series H Stock Purchase Agreement
         </p>
       </div>

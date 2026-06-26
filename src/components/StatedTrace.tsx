@@ -29,7 +29,7 @@ export const StatedTrace = ({ trace, onViewInDoc }: StatedTraceProps) => {
   }, [source.page, source.match]);
 
   if (!docPage) {
-    return <p className="p-6 text-sm text-[var(--text-secondary)]">Page not found.</p>;
+    return <p className="p-6 text-sm text-secondary">Page not found.</p>;
   }
 
   return (

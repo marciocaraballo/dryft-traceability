@@ -23,20 +23,20 @@ export const ComputedTrace = ({ trace, onViewInDoc }: ComputedTraceProps) => {
 
   return (
     <div className="p-5 flex flex-col gap-4">
-      <div className="rounded border border-[var(--border)] bg-[var(--background)] px-5 py-4">
-        <p className="text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase mb-2.5">
+      <div className="rounded border border-border bg-background px-5 py-4">
+        <p className="text-2xs font-semibold tracking-widest text-tertiary uppercase mb-2.5">
           Formula
         </p>
-        <p className="font-mono text-sm font-semibold text-[var(--text-primary)]">
+        <p className="font-mono text-sm font-semibold text-primary">
           {trace.formula}
         </p>
-        <p className="font-mono text-xs text-[var(--text-secondary)] mt-1">
+        <p className="font-mono text-xs text-secondary mt-1">
           {trace.expression}
         </p>
       </div>
 
       <div>
-        <p className="text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase mb-2">
+        <p className="text-2xs font-semibold tracking-widest text-tertiary uppercase mb-2">
           Inputs
         </p>
         <div className="flex flex-col gap-2">

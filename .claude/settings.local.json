@@ -23,7 +23,9 @@
       "Bash(npm outdated *)",
       "Bash(DEBUG_PRINT_LIMIT=50 npm test *)",
       "Bash(npm uninstall *)",
-      "Bash(DEBUG_PRINT_LIMIT=50 npx jest *)"
+      "Bash(DEBUG_PRINT_LIMIT=50 npx jest *)",
+      "Bash(xargs sed -i '' -e 's/\\\\[var\\(--text-primary\\)\\\\]/primary/g' -e 's/\\\\[var\\(--text-secondary\\)\\\\]/secondary/g' -e 's/\\\\[var\\(--text-tertiary\\)\\\\]/tertiary/g')",
+      "Bash(xargs sed -i '' -e 's/\\\\[var\\(--border-light\\)\\\\]/border-light/g' -e 's/\\\\[var\\(--border\\)\\\\]/border/g' -e 's/\\\\[var\\(--accent-light\\)\\\\]/accent-light/g' -e 's/\\\\[var\\(--accent\\)\\\\]/accent/g' -e 's/\\\\[var\\(--surface\\)\\\\]/surface/g' -e 's/\\\\[var\\(--background\\)\\\\]/background/g' -e 's/\\\\[var\\(--sidebar-bg\\)\\\\]/sidebar-bg/g')"
     ]
   }
 }

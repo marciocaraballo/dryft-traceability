@@ -18,22 +18,22 @@ export const TracePanel = ({ traceKey, onClose, onViewInDoc }: TracePanelProps) 
   if (!trace) return null;
 
   return (
-    <div role="dialog" aria-modal="true" aria-label={trace.label} className="fixed inset-0 z-50 flex flex-col bg-[var(--surface)] panel-enter overflow-hidden md:static md:inset-auto md:z-auto md:w-[440px] md:shrink-0 md:border-l-2 md:border-[var(--border)]">
-      <div className="flex items-center justify-between px-5 py-3 border-b border-[var(--border)] shrink-0 gap-3">
-        <span className="text-xs font-semibold text-[var(--text-primary)] truncate">
+    <div role="dialog" aria-modal="true" aria-label={trace.label} className="fixed inset-0 z-50 flex flex-col bg-surface panel-enter overflow-hidden md:static md:inset-auto md:z-auto md:w-[440px] md:shrink-0 md:border-l-2 md:border-border">
+      <div className="flex items-center justify-between px-5 py-3 border-b border-border shrink-0 gap-3">
+        <span className="text-xs font-semibold text-primary truncate">
           {trace.label}
         </span>
         <button
           onClick={onClose}
           aria-label="Close panel"
-          className="shrink-0 w-6 h-6 flex items-center justify-center text-lg leading-none text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors"
+          className="shrink-0 w-6 h-6 flex items-center justify-center text-lg leading-none text-tertiary hover:text-primary transition-colors"
         >
           ×
         </button>
       </div>
 
-      <div className="flex items-center justify-between px-5 py-2.5 border-b border-[var(--border-light)] shrink-0 bg-[var(--background)]">
-        <span className="text-lg font-semibold tabular-nums text-[var(--text-primary)]">
+      <div className="flex items-center justify-between px-5 py-2.5 border-b border-border-light shrink-0 bg-background">
+        <span className="text-lg font-semibold tabular-nums text-primary">
           {trace.value}
         </span>
         {trace.type === "stated" ? (
