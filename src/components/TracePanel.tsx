@@ -18,7 +18,7 @@ export const TracePanel = ({ traceKey, onClose, onViewInDoc }: TracePanelProps) 
   if (!trace) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-[var(--surface)] panel-enter overflow-hidden md:static md:inset-auto md:z-auto md:w-[440px] md:shrink-0 md:border-l-2 md:border-[var(--border)]">
+    <div role="dialog" aria-modal="true" aria-label={trace.label} className="fixed inset-0 z-50 flex flex-col bg-[var(--surface)] panel-enter overflow-hidden md:static md:inset-auto md:z-auto md:w-[440px] md:shrink-0 md:border-l-2 md:border-[var(--border)]">
       <div className="flex items-center justify-between px-5 py-3 border-b border-[var(--border)] shrink-0 gap-3">
         <span className="text-xs font-semibold text-[var(--text-primary)] truncate">
           {trace.label}

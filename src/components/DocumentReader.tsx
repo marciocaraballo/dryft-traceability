@@ -52,7 +52,7 @@ export const DocumentReader = ({ page: tracedPage, match, onClose }: DocumentRea
   }, [activePage]);
 
   return (
-    <div className="fixed inset-0 z-50 flex bg-[var(--background)] doc-reader-enter">
+    <div role="dialog" aria-modal="true" aria-label="Certificate of Incorporation viewer" className="fixed inset-0 z-50 flex bg-[var(--background)] doc-reader-enter">
       <aside className="w-48 shrink-0 border-r border-[var(--border)] bg-[var(--sidebar-bg)] flex flex-col overflow-hidden">
         <div className="px-4 py-3.5 border-b border-[var(--border)] shrink-0">
           <p className="text-[10px] font-semibold tracking-widest text-[var(--text-tertiary)] uppercase leading-snug">
@@ -70,6 +70,7 @@ export const DocumentReader = ({ page: tracedPage, match, onClose }: DocumentRea
               <button
                 key={p.page}
                 ref={(el) => { indexRefs.current[p.page] = el; }}
+                aria-label={`Go to page ${p.page}${isTraced ? " (source)" : ""}`}
                 onClick={() => {
                   setActivePage(p.page);
                   pageRefs.current[p.page]?.scrollIntoView({ behavior: "smooth", block: "start" });
