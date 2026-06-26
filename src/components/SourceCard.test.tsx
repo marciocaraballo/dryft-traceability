@@ -1,4 +1,5 @@
 jest.mock("@/data/coiDocument.json", () => ({
+  title: "Amended and Restated Certificate of Incorporation",
   company: "HELIOS BIOSCIENCE INC.",
   pages: [{ page: 17, text: "The Original Issue Price is $4.34." }],
 }));
