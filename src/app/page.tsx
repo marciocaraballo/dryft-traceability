@@ -1,65 +1,166 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState, useEffect } from "react";
+import { CapTable } from "@/components/CapTable";
+import { ShareClassDrawer } from "@/components/ShareClassDrawer";
+import { TracePanel } from "@/components/TracePanel";
+import { DocumentReader } from "@/components/DocumentReader";
+import { capTableRows, drawerDataMap } from "@/data/capTableData";
+import { TABS, NAV_ITEMS } from "./constants";
+
+interface DocReaderState {
+  page: number;
+  match: string;
+}
+
+const Home = () => {
+  const [selectedRowId, setSelectedRowId] = useState<string | null>(null);
+  const [activeTraceId, setActiveTraceId] = useState<string | null>(null);
+  const [panelTraceKey, setPanelTraceKey] = useState<string | null>(null);
+  const [docReader,     setDocReader]     = useState<DocReaderState | null>(null);
+
+  const selectedRow = selectedRowId ? capTableRows.find((r) => r.id === selectedRowId) ?? null : null;
+  const drawerData  = selectedRowId ? drawerDataMap[selectedRowId] ?? null : null;
+
+  const closePanel = () => {
+    setPanelTraceKey(null);
+    setActiveTraceId(null);
+  };
+
+  const closeAll = () => {
+    setSelectedRowId(null);
+    setActiveTraceId(null);
+    setPanelTraceKey(null);
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      if (docReader)     { setDocReader(null); return; }
+      if (panelTraceKey) { setPanelTraceKey(null); setActiveTraceId(null); return; }
+      if (selectedRowId) { setSelectedRowId(null); setActiveTraceId(null); setPanelTraceKey(null); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [docReader, panelTraceKey, selectedRowId]);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="h-full flex flex-col bg-[var(--background)]">
+      <header className="flex items-center justify-between h-11 px-4 border-b border-[var(--border)] bg-[var(--surface)] shrink-0">
+        <div className="flex items-center gap-3">
+          <span className="font-semibold text-sm tracking-tight text-[var(--text-primary)]">Dryft</span>
+          <span className="text-[var(--border)] select-none">·</span>
+          <span className="text-xs text-[var(--text-secondary)]">Prototype: conclusion-workspace</span>
+          <span className="text-[var(--border)] select-none">·</span>
+          <span className="text-xs text-[var(--text-secondary)]">Helios Bioscience Inc.</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-medium tracking-wide uppercase bg-emerald-50 text-emerald-700 border border-emerald-200">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
+            Concluded
+          </span>
+          <div className="w-6 h-6 rounded-full bg-[var(--sidebar-bg)] border border-[var(--border)] flex items-center justify-center text-[10px] font-semibold text-[var(--text-secondary)]">
+            KW
+          </div>
+        </div>
+      </header>
+
+      <div className="flex flex-1 min-h-0">
+        <aside className="w-48 shrink-0 bg-[var(--sidebar-bg)] border-r border-[var(--border)] flex flex-col py-3 gap-0.5">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.label}
+              className="flex items-center gap-2.5 px-3 py-1.5 text-xs text-[var(--text-secondary)] hover:bg-[var(--border-light)] hover:text-[var(--text-primary)] rounded-sm mx-1.5 transition-colors text-left"
+            >
+              <span className="text-[var(--text-tertiary)] text-base leading-none">{item.icon}</span>
+              {item.label}
+            </button>
+          ))}
+        </aside>
+
+        <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
+          <div className="px-8 pt-6 pb-0 bg-[var(--surface)] border-b border-[var(--border)] shrink-0">
+            <h1 className="font-serif text-2xl text-[var(--text-primary)] tracking-tight mb-1">
+              Helios Bioscience Inc.
+            </h1>
+            <p className="text-xs text-[var(--text-secondary)] mb-4">
+              April 30, 2026
+              <span className="mx-1.5 text-[var(--border)]">·</span>
+              409A Valuation
+              <span className="mx-1.5 text-[var(--border)]">·</span>
+              Version 4
+            </p>
+            <nav className="flex gap-0 -mb-px">
+              {TABS.map((tab) => (
+                <button
+                  key={tab}
+                  className={`px-4 py-2 text-xs font-medium border-b-2 transition-colors whitespace-nowrap ${
+                    tab === "Capitalization"
+                      ? "border-[var(--text-primary)] text-[var(--text-primary)]"
+                      : "border-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--border)]"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </nav>
+          </div>
+
+          <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
+            <div className="flex-1 overflow-auto bg-[var(--surface)] pt-2">
+              <CapTable
+                rows={capTableRows}
+                selectedId={selectedRowId}
+                activeTraceId={activeTraceId}
+                onRowClick={(id) => {
+                  if (selectedRowId === id) {
+                    closeAll();
+                  } else {
+                    setSelectedRowId(id);
+                    setActiveTraceId(null);
+                    setPanelTraceKey(null);
+                  }
+                }}
+                onTrace={(key) => {
+                  setActiveTraceId(key);
+                  setPanelTraceKey(key);
+                }}
+              />
+            </div>
+
+            {selectedRow && drawerData && (
+              <ShareClassDrawer
+                row={selectedRow}
+                drawer={drawerData}
+                activeTraceId={activeTraceId}
+                onTrace={(key) => {
+                  setActiveTraceId(key);
+                  setPanelTraceKey(key);
+                }}
+                onClose={closeAll}
+              />
+            )}
+          </div>
+        </main>
+
+        {panelTraceKey && (
+          <TracePanel
+            traceKey={panelTraceKey}
+            onClose={closePanel}
+            onViewInDoc={(page, match) => setDocReader({ page, match })}
+          />
+        )}
+      </div>
+
+      {docReader && (
+        <DocumentReader
+          page={docReader.page}
+          match={docReader.match}
+          onClose={() => setDocReader(null)}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      )}
     </div>
   );
-}
+};
+
+export default Home;

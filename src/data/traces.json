@@ -1,0 +1,225 @@
+{
+  "issuePrice.charter": {
+    "type": "stated",
+    "label": "Original Issue Price — Charter",
+    "value": "$0.63",
+    "source": {
+      "docId": "coi-helios",
+      "page": 17,
+      "match": "the \"Original Issue Price\" of the Charter Preferred Stock is $0.625"
+    }
+  },
+  "issuePrice.seriesA": {
+    "type": "stated",
+    "label": "Original Issue Price — Series A",
+    "value": "$3.15",
+    "source": {
+      "docId": "coi-helios",
+      "page": 17,
+      "match": "the \"Original Issue Price\" of the Series A Preferred Stock is $3.15"
+    }
+  },
+  "issuePrice.seriesB": {
+    "type": "stated",
+    "label": "Original Issue Price — Series B",
+    "value": "$5.72",
+    "source": {
+      "docId": "coi-helios",
+      "page": 17,
+      "match": "the \"Original Issue Price\" of the Series B Preferred Stock is $5.72"
+    }
+  },
+  "issuePrice.seriesC": {
+    "type": "stated",
+    "label": "Original Issue Price — Series C",
+    "value": "$5.33",
+    "source": {
+      "docId": "coi-helios",
+      "page": 17,
+      "match": "the \"Original Issue Price\" of the Series C Preferred Stock is $5.33"
+    }
+  },
+  "issuePrice.seriesD": {
+    "type": "stated",
+    "label": "Original Issue Price — Series D",
+    "value": "$5.73",
+    "source": {
+      "docId": "coi-helios",
+      "page": 17,
+      "match": "the \"Original Issue Price\" of the Series D Preferred Stock is $5.73"
+    }
+  },
+  "issuePrice.seriesE": {
+    "type": "stated",
+    "label": "Original Issue Price — Series E",
+    "value": "$10.93",
+    "source": {
+      "docId": "coi-helios",
+      "page": 17,
+      "match": "the \"Original Issue Price\" of the Series E Preferred Stock is $10.93"
+    }
+  },
+  "issuePrice.seriesF": {
+    "type": "stated",
+    "label": "Original Issue Price — Series F",
+    "value": "$11.69",
+    "source": {
+      "docId": "coi-helios",
+      "page": 17,
+      "match": "the \"Original Issue Price\" of the Series F Preferred Stock is $11.69"
+    }
+  },
+  "issuePrice.seriesG": {
+    "type": "stated",
+    "label": "Original Issue Price — Series G",
+    "value": "$19.07",
+    "source": {
+      "docId": "coi-helios",
+      "page": 17,
+      "match": "the \"Original Issue Price\" of the Series G Preferred Stock is $19.07"
+    }
+  },
+  "issuePrice.seriesH": {
+    "type": "stated",
+    "label": "Original Issue Price — Series H",
+    "value": "$4.34",
+    "source": {
+      "docId": "coi-helios",
+      "page": 17,
+      "match": "the \"Original Issue Price\" of the Series H Preferred Stock is $4.34"
+    }
+  },
+  "sharesOutstanding.charter": {
+    "type": "stated",
+    "label": "Shares Outstanding — Charter",
+    "value": "204,250",
+    "source": {
+      "docId": "coi-helios",
+      "page": 1,
+      "match": "204,250 shares of Preferred Stock are hereby designated Charter Preferred Stock"
+    }
+  },
+  "sharesOutstanding.seriesA": {
+    "type": "stated",
+    "label": "Shares Outstanding — Series A",
+    "value": "384,126",
+    "source": {
+      "docId": "coi-helios",
+      "page": 1,
+      "match": "634,919 shares of Preferred Stock are hereby designated Series A"
+    }
+  },
+  "sharesOutstanding.seriesB": {
+    "type": "stated",
+    "label": "Shares Outstanding — Series B",
+    "value": "800,636",
+    "source": {
+      "docId": "coi-helios",
+      "page": 2,
+      "match": "1,048,953 shares of Preferred Stock are hereby designated Series B Preferred Stock"
+    }
+  },
+  "sharesOutstanding.seriesC": {
+    "type": "stated",
+    "label": "Shares Outstanding — Series C",
+    "value": "685,955",
+    "source": {
+      "docId": "coi-helios",
+      "page": 2,
+      "match": "1,099,616 shares of Preferred Stock are hereby designated Series C Preferred Stock"
+    }
+  },
+  "sharesOutstanding.seriesD": {
+    "type": "stated",
+    "label": "Shares Outstanding — Series D",
+    "value": "974,862",
+    "source": {
+      "docId": "coi-helios",
+      "page": 2,
+      "match": "1,221,640 shares of Preferred Stock are hereby designated as Series D Preferred Stock"
+    }
+  },
+  "sharesOutstanding.seriesE": {
+    "type": "stated",
+    "label": "Shares Outstanding — Series E",
+    "value": "495,490",
+    "source": {
+      "docId": "coi-helios",
+      "page": 2,
+      "match": "691,674 shares of Preferred Stock are hereby designated as Series E Preferred Stock"
+    }
+  },
+  "sharesOutstanding.seriesF": {
+    "type": "stated",
+    "label": "Shares Outstanding — Series F",
+    "value": "823,352",
+    "source": {
+      "docId": "coi-helios",
+      "page": 2,
+      "match": "940,976 shares of Preferred Stock are hereby designated as Series F Preferred Stock"
+    }
+  },
+  "sharesOutstanding.seriesG": {
+    "type": "stated",
+    "label": "Shares Outstanding — Series G",
+    "value": "317,254",
+    "source": {
+      "docId": "coi-helios",
+      "page": 2,
+      "match": "390,787 shares of Preferred Stock are hereby designated as Series G Preferred Stock"
+    }
+  },
+  "sharesOutstanding.seriesH": {
+    "type": "stated",
+    "label": "Shares Outstanding — Series H",
+    "value": "1,059,664",
+    "source": {
+      "docId": "coi-helios",
+      "page": 2,
+      "match": "1,366,333 shares of Preferred Stock are hereby designated as Series H Preferred Stock"
+    }
+  },
+  "conversionPrice.seriesH": {
+    "type": "stated",
+    "label": "Conversion Price — Series H",
+    "value": "$4.34",
+    "source": {
+      "docId": "coi-helios",
+      "page": 17,
+      "match": "the \"Conversion Price\" of the Series H Preferred Stock as of the Original Issue Date is $4.34"
+    }
+  },
+  "conversionRatio.seriesH": {
+    "type": "computed",
+    "label": "Conversion Ratio — Series H",
+    "value": "1.0000",
+    "formula": "Issue Price ÷ Conversion Price",
+    "expression": "$4.34 ÷ $4.34 = 1.0000",
+    "inputs": [
+      "issuePrice.seriesH",
+      "conversionPrice.seriesH"
+    ]
+  },
+  "liqPref.seriesH": {
+    "type": "computed",
+    "label": "Total Liquidation Preference — Series H",
+    "value": "$4,598,942",
+    "formula": "Issue Price × Shares Outstanding",
+    "expression": "$4.34 × 1,059,664 = $4,598,941.76",
+    "inputs": [
+      "issuePrice.seriesH",
+      "sharesOutstanding.seriesH"
+    ]
+  },
+  "breakpoint1.threshold": {
+    "type": "computed",
+    "label": "Breakpoint #1 — Individual Threshold",
+    "value": "$4,598,941.76",
+    "formula": "Issue Price × Shares Outstanding",
+    "expression": "$4.34 × 1,059,664 = $4,598,941.76",
+    "inputs": [
+      "issuePrice.seriesH",
+      "sharesOutstanding.seriesH"
+    ]
+  }
+}
