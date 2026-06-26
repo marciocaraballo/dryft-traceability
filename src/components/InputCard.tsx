@@ -53,7 +53,7 @@ export const InputCard = ({ inputKey, isExpanded, onToggle, onViewInDoc }: Input
           <p className="text-xs font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
             {trace.label}
           </p>
-          <span className="inline-flex self-start items-center gap-1 px-1.5 py-0.5 rounded border text-[10px] font-semibold bg-emerald-50 text-emerald-700 border-emerald-200">
+          <span className="inline-flex self-start items-center gap-1 px-1.5 py-0.5 rounded border text-2xs font-semibold bg-emerald-50 text-emerald-700 border-emerald-200">
             ✓ Sourced
           </span>
         </div>

@@ -39,7 +39,7 @@ export const ShareClassDrawer = ({ row, drawer, activeTraceId, onTrace, onClose 
 
       <div className="px-4 py-4 flex flex-col gap-6 md:px-8 md:flex-row md:gap-12">
         <div className="flex-1 min-w-0">
-          <p className="text-[10px] font-semibold tracking-widest text-[var(--text-tertiary)] uppercase mb-2">Rights and Preferences</p>
+          <p className="text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase mb-2">Rights and Preferences</p>
           <div className="max-w-xs">
             <Field label="LP Rank">{drawer.lpRank}</Field>
             <Field label="LP Multiple">{drawer.lpMultiple}</Field>
@@ -53,13 +53,13 @@ export const ShareClassDrawer = ({ row, drawer, activeTraceId, onTrace, onClose 
         </div>
 
         <div className="flex-1 min-w-0">
-          <p className="text-[10px] font-semibold tracking-widest text-[var(--text-tertiary)] uppercase mb-2">Calculations</p>
+          <p className="text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase mb-2">Calculations</p>
           <table className="w-full">
             <thead>
               <tr>
                 <th className="text-left" />
-                <th className="pb-1.5 px-4 text-right text-[10px] font-semibold tracking-wider text-[var(--text-tertiary)] uppercase">Per Share</th>
-                <th className="pb-1.5 pl-4 text-right text-[10px] font-semibold tracking-wider text-[var(--text-tertiary)] uppercase">Total</th>
+                <th className="pb-1.5 px-4 text-right text-2xs font-semibold tracking-wider text-[var(--text-tertiary)] uppercase">Per Share</th>
+                <th className="pb-1.5 pl-4 text-right text-2xs font-semibold tracking-wider text-[var(--text-tertiary)] uppercase">Total</th>
               </tr>
             </thead>
             <tbody>
@@ -92,7 +92,7 @@ export const ShareClassDrawer = ({ row, drawer, activeTraceId, onTrace, onClose 
       </div>
 
       <div className="px-4 py-2.5 border-t border-[var(--border-light)] bg-[var(--background)] md:px-8">
-        <p className="text-[11px] text-[var(--text-tertiary)]">
+        <p className="text-xs text-[var(--text-tertiary)]">
           <span className="font-medium text-[var(--text-secondary)]">Sources:</span>{" "}
           Helios Bioscience Inc. — Amended and Restated Certificate of Incorporation (Jan 22, 2026), Series H Stock Purchase Agreement
         </p>

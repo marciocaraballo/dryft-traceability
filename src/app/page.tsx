@@ -64,11 +64,11 @@ const Home = () => {
           <span className="hidden md:inline text-xs text-[var(--text-secondary)]">Helios Bioscience Inc.</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-medium tracking-wide uppercase bg-emerald-50 text-emerald-700 border border-emerald-200">
+          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-2xs font-medium tracking-wide uppercase bg-emerald-50 text-emerald-700 border border-emerald-200">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
             Concluded
           </span>
-          <div className="w-6 h-6 rounded-full bg-[var(--sidebar-bg)] border border-[var(--border)] flex items-center justify-center text-[10px] font-semibold text-[var(--text-secondary)]">
+          <div className="w-6 h-6 rounded-full bg-[var(--sidebar-bg)] border border-[var(--border)] flex items-center justify-center text-2xs font-semibold text-[var(--text-secondary)]">
             KW
           </div>
         </div>

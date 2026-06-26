@@ -25,13 +25,13 @@ export const SourceCard = ({ page, text, match, markRef, onViewInDoc }: SourceCa
     <div className="flex flex-col gap-3">
       <div className="rounded border border-[var(--border)] overflow-hidden">
         <div className="flex items-center justify-between px-5 py-2.5 border-b border-[var(--border-light)] bg-[#f5f5f2]">
-          <span className="font-sans text-[10px] font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
+          <span className="font-sans text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
             {coiDoc.company}
           </span>
-          <span className="font-sans text-[10px] text-[var(--text-tertiary)]">Page {page}</span>
+          <span className="font-sans text-2xs text-[var(--text-tertiary)]">Page {page}</span>
         </div>
         <div className="px-6 py-5 bg-[#fafaf8]">
-          <p className="font-serif text-[13px] leading-[1.85] text-[var(--text-primary)]">
+          <p className="font-serif text-sm leading-[1.85] text-[var(--text-primary)]">
             {found ? (
               <>
                 {before}

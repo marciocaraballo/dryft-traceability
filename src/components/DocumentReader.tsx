@@ -55,11 +55,11 @@ export const DocumentReader = ({ page: tracedPage, match, onClose }: DocumentRea
     <div role="dialog" aria-modal="true" aria-label="Certificate of Incorporation viewer" className="fixed inset-0 z-50 flex bg-[var(--background)] doc-reader-enter">
       <aside className="w-48 shrink-0 border-r border-[var(--border)] bg-[var(--sidebar-bg)] flex flex-col overflow-hidden">
         <div className="px-4 py-3.5 border-b border-[var(--border)] shrink-0">
-          <p className="text-[10px] font-semibold tracking-widest text-[var(--text-tertiary)] uppercase leading-snug">
+          <p className="text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase leading-snug">
             {coiDoc.title}
           </p>
           <p className="text-xs text-[var(--text-secondary)] mt-0.5">{coiDoc.company}</p>
-          <p className="text-[10px] text-[var(--text-tertiary)] mt-0.5">{coiDoc.date}</p>
+          <p className="text-2xs text-[var(--text-tertiary)] mt-0.5">{coiDoc.date}</p>
         </div>
 
         <div className="flex-1 overflow-y-auto py-1">
@@ -81,10 +81,10 @@ export const DocumentReader = ({ page: tracedPage, match, onClose }: DocumentRea
                     : "hover:bg-[var(--border-light)] text-[var(--text-secondary)]"
                 }`}
               >
-                <span className="text-[10px] tabular-nums shrink-0 w-6 text-right text-[var(--text-tertiary)]">
+                <span className="text-2xs tabular-nums shrink-0 w-6 text-right text-[var(--text-tertiary)]">
                   {p.page}
                 </span>
-                <span className="text-[11px] leading-snug truncate flex-1">
+                <span className="text-xs leading-snug truncate flex-1">
                   {p.text.slice(0, 28).trim()}…
                 </span>
                 {isTraced && (
@@ -134,15 +134,15 @@ export const DocumentReader = ({ page: tracedPage, match, onClose }: DocumentRea
                       : "border-[var(--border)]"
                   }`}>
                     <div className="flex items-center justify-between mb-5 pb-3 border-b border-[var(--border-light)]">
-                      <span className="font-sans text-[10px] font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
+                      <span className="font-sans text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
                         {coiDoc.company}
                       </span>
-                      <span className="font-sans text-[10px] text-[var(--text-tertiary)]">
+                      <span className="font-sans text-2xs text-[var(--text-tertiary)]">
                         Page {p.page}
                       </span>
                     </div>
 
-                    <p className="font-serif text-[13.5px] leading-[1.9] text-[var(--text-primary)]">
+                    <p className="font-serif text-sm leading-[1.9] text-[var(--text-primary)]">
                       {isTraced && idx >= 0 ? (
                         <>
                           {before}

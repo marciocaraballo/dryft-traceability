@@ -36,7 +36,7 @@ export const CapTable = ({ rows, selectedId, activeTraceId, onRowClick, onTrace 
           {COL_HEADERS.map((col) => (
             <th
               key={col.label}
-              className={cn(col.cls, "px-4 py-2.5 font-medium text-[10px] tracking-wider text-[var(--text-tertiary)] border-b border-[var(--border)] whitespace-nowrap")}
+              className={cn(col.cls, "px-4 py-2.5 font-medium text-2xs tracking-wider text-[var(--text-tertiary)] border-b border-[var(--border)] whitespace-nowrap")}
             >
               {col.label}
             </th>
@@ -48,7 +48,7 @@ export const CapTable = ({ rows, selectedId, activeTraceId, onRowClick, onTrace 
           if (row.isSection) {
             return (
               <tr key={row.id}>
-                <td colSpan={6} className="px-4 pt-4 pb-1.5 text-[10px] font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
+                <td colSpan={6} className="px-4 pt-4 pb-1.5 text-2xs font-semibold tracking-widest text-[var(--text-tertiary)] uppercase">
                   {row.sectionLabel}
                 </td>
               </tr>

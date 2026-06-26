@@ -16,6 +16,7 @@
 }
 
 @theme inline {
+  --text-2xs: 0.625rem;
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-sidebar-bg: var(--sidebar-bg);
