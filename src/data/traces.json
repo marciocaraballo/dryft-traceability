@@ -1,7 +1,7 @@
 {
   "issuePrice.charter": {
     "type": "stated",
-    "label": "Original Issue Price — Charter",
+    "label": "Issue Price — Charter",
     "value": "$0.63",
     "source": {
       "docId": "coi-helios",
@@ -11,7 +11,7 @@
   },
   "issuePrice.seriesA": {
     "type": "stated",
-    "label": "Original Issue Price — Series A",
+    "label": "Issue Price — Series A",
     "value": "$3.15",
     "source": {
       "docId": "coi-helios",
@@ -21,7 +21,7 @@
   },
   "issuePrice.seriesB": {
     "type": "stated",
-    "label": "Original Issue Price — Series B",
+    "label": "Issue Price — Series B",
     "value": "$5.72",
     "source": {
       "docId": "coi-helios",
@@ -31,7 +31,7 @@
   },
   "issuePrice.seriesC": {
     "type": "stated",
-    "label": "Original Issue Price — Series C",
+    "label": "Issue Price — Series C",
     "value": "$5.33",
     "source": {
       "docId": "coi-helios",
@@ -41,7 +41,7 @@
   },
   "issuePrice.seriesD": {
     "type": "stated",
-    "label": "Original Issue Price — Series D",
+    "label": "Issue Price — Series D",
     "value": "$5.73",
     "source": {
       "docId": "coi-helios",
@@ -51,7 +51,7 @@
   },
   "issuePrice.seriesE": {
     "type": "stated",
-    "label": "Original Issue Price — Series E",
+    "label": "Issue Price — Series E",
     "value": "$10.93",
     "source": {
       "docId": "coi-helios",
@@ -61,7 +61,7 @@
   },
   "issuePrice.seriesF": {
     "type": "stated",
-    "label": "Original Issue Price — Series F",
+    "label": "Issue Price — Series F",
     "value": "$11.69",
     "source": {
       "docId": "coi-helios",
@@ -71,7 +71,7 @@
   },
   "issuePrice.seriesG": {
     "type": "stated",
-    "label": "Original Issue Price — Series G",
+    "label": "Issue Price — Series G",
     "value": "$19.07",
     "source": {
       "docId": "coi-helios",
@@ -81,7 +81,7 @@
   },
   "issuePrice.seriesH": {
     "type": "stated",
-    "label": "Original Issue Price — Series H",
+    "label": "Issue Price — Series H",
     "value": "$4.34",
     "source": {
       "docId": "coi-helios",
