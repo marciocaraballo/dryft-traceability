@@ -1,12 +1,15 @@
 "use client";
 
 import { ChevronRight } from "lucide-react";
-import type { ShareClassRow } from "@/types";
+import tracesRaw from "@/data/traces.json";
+import type { ShareClassRow, Trace } from "@/types";
 import { TraceableValue } from "./TraceableValue";
 import { formatShares } from "@/utils/formatShares";
 import { formatPercent } from "@/utils/formatPercent";
 import { formatPrice } from "@/utils/formatPrice";
 import { cn } from "@/lib/utils";
+
+const allTraces = tracesRaw as Record<string, Trace>;
 
 interface CapTableProps {
   rows: ShareClassRow[];
@@ -104,7 +107,7 @@ export const CapTable = ({ rows, selectedId, activeTraceId, onRowClick, onTrace 
                       onTrace={onTrace}
                       isActive={activeTraceId === sharesTraceId}
                     >
-                      {formatShares(row.sharesOutstanding)}
+                      {allTraces[sharesTraceId]?.value ?? formatShares(row.sharesOutstanding)}
                     </TraceableValue>
                   ) : formatShares(row.sharesOutstanding)
                 )}
@@ -127,7 +130,7 @@ export const CapTable = ({ rows, selectedId, activeTraceId, onRowClick, onTrace 
                     onTrace={onTrace}
                     isActive={activeTraceId === priceTraceId}
                   >
-                    {formatPrice(row.issuePrice)}
+                    {allTraces[priceTraceId]?.value ?? formatPrice(row.issuePrice)}
                   </TraceableValue>
                 ) : formatPrice(row.issuePrice)}
               </td>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { CapTable } from "@/components/CapTable";
 import { ShareClassDrawer } from "@/components/ShareClassDrawer";
 import { TracePanel } from "@/components/TracePanel";
@@ -18,6 +19,7 @@ const Home = () => {
   const [activeTraceId, setActiveTraceId] = useState<string | null>(null);
   const [panelTraceKey, setPanelTraceKey] = useState<string | null>(null);
   const [docReader,     setDocReader]     = useState<DocReaderState | null>(null);
+  const [sidebarOpen,   setSidebarOpen]   = useState(false);
 
   const selectedRow = selectedRowId ? capTableRows.find((r) => r.id === selectedRowId) ?? null : null;
   const drawerData  = selectedRowId ? drawerDataMap[selectedRowId] ?? null : null;
@@ -48,11 +50,18 @@ const Home = () => {
     <div className="h-full flex flex-col bg-[var(--background)]">
       <header className="flex items-center justify-between h-11 px-4 border-b border-[var(--border)] bg-[var(--surface)] shrink-0">
         <div className="flex items-center gap-3">
+          <button
+            aria-label="Open navigation"
+            onClick={() => setSidebarOpen(true)}
+            className="md:hidden flex items-center justify-center w-7 h-7 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+          >
+            <Menu size={16} />
+          </button>
           <span className="font-semibold text-sm tracking-tight text-[var(--text-primary)]">Dryft</span>
-          <span className="text-[var(--border)] select-none">·</span>
-          <span className="text-xs text-[var(--text-secondary)]">Prototype: conclusion-workspace</span>
-          <span className="text-[var(--border)] select-none">·</span>
-          <span className="text-xs text-[var(--text-secondary)]">Helios Bioscience Inc.</span>
+          <span className="hidden md:inline text-[var(--border)] select-none">·</span>
+          <span className="hidden md:inline text-xs text-[var(--text-secondary)]">Prototype: conclusion-workspace</span>
+          <span className="hidden md:inline text-[var(--border)] select-none">·</span>
+          <span className="hidden md:inline text-xs text-[var(--text-secondary)]">Helios Bioscience Inc.</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-medium tracking-wide uppercase bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -66,7 +75,7 @@ const Home = () => {
       </header>
 
       <div className="flex flex-1 min-h-0">
-        <aside className="w-48 shrink-0 bg-[var(--sidebar-bg)] border-r border-[var(--border)] flex flex-col py-3 gap-0.5">
+        <aside className="hidden md:flex w-48 shrink-0 bg-[var(--sidebar-bg)] border-r border-[var(--border)] flex-col py-3 gap-0.5">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.label}
@@ -77,6 +86,37 @@ const Home = () => {
             </button>
           ))}
         </aside>
+
+        {sidebarOpen && (
+          <>
+            <div
+              className="fixed inset-0 z-40 bg-black/30 md:hidden"
+              onClick={() => setSidebarOpen(false)}
+            />
+            <aside className="fixed inset-y-0 left-0 z-50 w-56 bg-[var(--sidebar-bg)] border-r border-[var(--border)] flex flex-col py-3 gap-0.5 md:hidden">
+              <div className="flex items-center justify-between px-3 pb-2 mb-1 border-b border-[var(--border-light)]">
+                <span className="text-xs font-semibold text-[var(--text-tertiary)] uppercase tracking-widest">Menu</span>
+                <button
+                  aria-label="Close navigation"
+                  onClick={() => setSidebarOpen(false)}
+                  className="flex items-center justify-center w-6 h-6 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                >
+                  <X size={14} />
+                </button>
+              </div>
+              {NAV_ITEMS.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={() => setSidebarOpen(false)}
+                  className="flex items-center gap-2.5 px-3 py-1.5 text-xs text-[var(--text-secondary)] hover:bg-[var(--border-light)] hover:text-[var(--text-primary)] rounded-sm mx-1.5 transition-colors text-left"
+                >
+                  <span className="text-[var(--text-tertiary)] text-base leading-none">{item.icon}</span>
+                  {item.label}
+                </button>
+              ))}
+            </aside>
+          </>
+        )}
 
         <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
           <div className="px-8 pt-6 pb-0 bg-[var(--surface)] border-b border-[var(--border)] shrink-0">
