@@ -107,7 +107,7 @@ export const CapTable = ({ rows, selectedId, activeTraceId, onRowClick, onTrace 
                       onTrace={onTrace}
                       isActive={activeTraceId === sharesTraceId}
                     >
-                      {allTraces[sharesTraceId]?.value ?? formatShares(row.sharesOutstanding)}
+                      {formatShares(row.sharesOutstanding)}
                     </TraceableValue>
                   ) : formatShares(row.sharesOutstanding)
                 )}
